@@ -107,7 +107,7 @@ Excluded
 
 Frontend
 
-- Next.js 15
+- Latest stable Next.js (App Router)
 - React 19
 - TypeScript
 - Tailwind CSS
