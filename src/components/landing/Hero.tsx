@@ -34,7 +34,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 26 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.45, ease: "easeOut" }}
-          className="order-1 lg:col-start-1 lg:row-start-1 max-w-[620px] font-heading text-[clamp(4.25rem,11vw,9.25rem)] leading-[0.88] text-foreground"
+          className="order-1 lg:col-start-1 lg:row-start-1 max-w-[540px] font-heading text-[clamp(2.75rem,6.5vw,5.5rem)] leading-[0.88] text-foreground"
         >
           Waiting can become{" "}
           <span className="bg-linear-to-r from-primary to-orb-end bg-clip-text text-transparent">
