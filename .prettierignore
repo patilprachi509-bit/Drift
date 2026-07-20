@@ -3,6 +3,7 @@ node_modules
 package-lock.json
 public
 PROJECT.md
+ARCHITECTURE.md
 README.md
 docs
 tasks
