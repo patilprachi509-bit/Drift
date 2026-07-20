@@ -9,28 +9,40 @@ export type ExperienceCardData = {
   artwork: string;
   part: string;
   description: string;
+  fit?: "cover" | "contain";
+  bgColor?: string;
 };
 
 type ExperienceCardProps = {
   experience: ExperienceCardData;
+  isActive?: boolean;
 };
 
-export function ExperienceCard({ experience }: ExperienceCardProps) {
+export function ExperienceCard({ experience, isActive = true }: ExperienceCardProps) {
   return (
     <motion.article
-      whileHover={{ y: -6, scale: 1.01 }}
-      transition={{ duration: 0.25, ease: "easeOut" }}
+      animate={{
+        opacity: isActive ? 1 : 0.6,
+        scale: isActive ? 1 : 0.96,
+      }}
+      whileHover={{ y: -6, scale: isActive ? 1.015 : 0.975 }}
+      transition={{ duration: 0.3, ease: "easeOut" }}
       className="min-w-[285px] snap-center rounded-lg border bg-surface p-4 shadow-soft transition-shadow duration-normal ease-standard hover:shadow-medium sm:min-w-[330px]"
     >
       <div className="mx-auto w-full max-w-[230px] rounded-[2rem] border border-foreground/10 bg-foreground p-2">
-        <div className="overflow-hidden rounded-[1.55rem] bg-background">
+        <div 
+          className="overflow-hidden rounded-[1.55rem]"
+          style={{ backgroundColor: experience.bgColor || "var(--background)" }}
+        >
           <Image
             src={experience.artwork}
             alt={`${experience.title} artwork`}
             width={360}
             height={640}
             loading="lazy"
-            className="aspect-[9/16] h-auto w-full object-cover"
+            className={`aspect-[9/16] h-auto w-full ${
+              experience.fit === "contain" ? "object-contain" : "object-cover"
+            }`}
           />
         </div>
       </div>
@@ -62,3 +74,4 @@ export function ExperienceCard({ experience }: ExperienceCardProps) {
     </motion.article>
   );
 }
+

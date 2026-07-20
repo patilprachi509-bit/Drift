@@ -15,7 +15,7 @@ export function CompletionIllustration() {
       className="relative mx-auto flex w-full max-w-sm flex-col items-center lg:max-w-md"
     >
       <Image
-        src="/landing/completion.svg"
+        src="/landing/interlude-complete.png"
         alt="Abstract illustration showing a completed interlude"
         width={720}
         height={720}

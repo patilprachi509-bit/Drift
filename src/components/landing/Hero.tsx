@@ -17,12 +17,12 @@ export function Hero() {
         className="absolute inset-0 -z-10"
       >
         <Image
-          src="/landing/pastel-landscape.svg"
+          src="/landing/hero-bg.png"
           alt="Pastel landscape with soft hills and warm light"
           fill
           priority
           sizes="100vw"
-          className="object-cover"
+          className="object-cover object-bottom"
         />
       </motion.div>
 

@@ -17,7 +17,7 @@ type Widget = {
 const widgets: Widget[] = [
   {
     label: "Airport",
-    image: "/landing/context-airport.svg",
+    image: "/landing/airport-bg.png",
     icon: Plane,
     className: "left-[7%] top-[24%]",
     delay: 0,
@@ -25,7 +25,7 @@ const widgets: Widget[] = [
   },
   {
     label: "Hospital",
-    image: "/landing/context-hospital.svg",
+    image: "/landing/hospital-bg.png",
     icon: HeartPulse,
     className: "right-[8%] top-[20%]",
     delay: 1.2,
@@ -33,7 +33,7 @@ const widgets: Widget[] = [
   },
   {
     label: "Coffee Shop",
-    image: "/landing/context-coffee.svg",
+    image: "/landing/coffee-bg.png",
     icon: Coffee,
     className: "left-[10%] bottom-[14%]",
     delay: 0.6,
@@ -41,7 +41,7 @@ const widgets: Widget[] = [
   },
   {
     label: "Commute",
-    image: "/landing/context-commute.svg",
+    image: "/landing/commute-bg.png",
     icon: TrainFront,
     className: "right-[12%] bottom-[16%]",
     delay: 1.8,

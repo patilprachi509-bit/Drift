@@ -1,9 +1,39 @@
+"use client";
+
 import Link from "next/link";
-import { Moon } from "lucide-react";
+import { Moon, Sun } from "lucide-react";
+import { useState, useEffect } from "react";
 
 const navItems = ["For You", "How it Works", "Use Cases", "About"] as const;
 
 export function Navbar() {
+  const [theme, setTheme] = useState<"light" | "dark">("light");
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme") as "light" | "dark" | null;
+    const initialTheme = savedTheme || "light";
+    if (initialTheme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+    const timer = setTimeout(() => {
+      setTheme(initialTheme);
+    }, 0);
+    return () => clearTimeout(timer);
+  }, []);
+
+  const toggleTheme = () => {
+    const nextTheme = theme === "light" ? "dark" : "light";
+    setTheme(nextTheme);
+    localStorage.setItem("theme", nextTheme);
+    if (nextTheme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  };
+
   return (
     <header className="absolute inset-x-0 top-0 z-30">
       <nav
@@ -40,13 +70,19 @@ export function Navbar() {
           </Link>
           <button
             type="button"
-            aria-label="Toggle theme"
+            onClick={toggleTheme}
+            aria-label={`Switch to ${theme === "light" ? "dark" : "light"} theme`}
             className="grid size-10 place-items-center rounded-pill border border-border/80 bg-surface/35 text-foreground backdrop-blur-md outline-none transition-colors duration-normal ease-standard hover:border-primary hover:text-primary-hover focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-4 focus-visible:ring-offset-background"
           >
-            <Moon aria-hidden="true" className="size-4" />
+            {theme === "light" ? (
+              <Moon aria-hidden="true" className="size-4" />
+            ) : (
+              <Sun aria-hidden="true" className="size-4" />
+            )}
           </button>
         </div>
       </nav>
     </header>
   );
 }
+
