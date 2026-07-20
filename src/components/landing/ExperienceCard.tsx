@@ -27,9 +27,9 @@ export function ExperienceCard({ experience, isActive = true }: ExperienceCardPr
       }}
       whileHover={{ y: -6, scale: isActive ? 1.015 : 0.975 }}
       transition={{ duration: 0.3, ease: "easeOut" }}
-      className="min-w-[285px] snap-center rounded-lg border bg-surface p-4 shadow-soft transition-shadow duration-normal ease-standard hover:shadow-medium sm:min-w-[330px]"
+      className="w-[285px] min-w-[285px] sm:w-[350px] sm:min-w-[350px] snap-center rounded-lg border bg-surface p-5 shadow-soft transition-shadow duration-normal ease-standard hover:shadow-medium"
     >
-      <div className="mx-auto w-full max-w-[230px] rounded-[2rem] border border-foreground/10 bg-foreground p-2">
+      <div className="mx-auto w-full max-w-[170px] rounded-[2rem] border border-foreground/10 bg-foreground p-2">
         <div 
           className="overflow-hidden rounded-[1.55rem]"
           style={{ backgroundColor: experience.bgColor || "var(--background)" }}
@@ -49,13 +49,13 @@ export function ExperienceCard({ experience, isActive = true }: ExperienceCardPr
 
       <div className="mt-5 space-y-4">
         <div className="flex items-center justify-between gap-4">
-          <h3 className="font-heading text-3xl leading-none text-foreground">{experience.title}</h3>
+          <h3 className="font-heading text-2xl leading-none text-foreground">{experience.title}</h3>
           <span className="shrink-0 rounded-pill border px-3 py-1 text-xs text-muted-foreground">
             {experience.part}
           </span>
         </div>
         <p className="text-sm leading-6 text-muted-foreground">{experience.description}</p>
-        <div className="flex items-center justify-between gap-4">
+        <div className="flex items-center justify-between gap-4 pt-1">
           <a
             href="/experience"
             className="rounded-pill bg-primary px-4 py-2 text-sm font-medium text-primary-foreground outline-none transition-colors duration-normal ease-standard hover:bg-primary-hover focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-4 focus-visible:ring-offset-surface"

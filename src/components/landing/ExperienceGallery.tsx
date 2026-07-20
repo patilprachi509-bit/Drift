@@ -84,20 +84,20 @@ export function ExperienceGallery() {
   return (
     <section
       id="experience-gallery"
-      className="relative overflow-hidden bg-background px-6 py-[var(--section-padding)] lg:px-8"
+      className="relative overflow-hidden bg-background px-6 py-20 lg:py-36 lg:px-8"
     >
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <Image
           src="/landing/gallery-bg.png"
           alt=""
           fill
-          priority
+          loading="lazy"
           sizes="100vw"
           className="object-cover opacity-40 blur-[5px]"
         />
       </div>
 
-      <div className="mx-auto grid max-w-[var(--max-content-width)] gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
+      <div className="mx-auto grid max-w-[var(--max-content-width)] gap-12 lg:gap-16 lg:grid-cols-[45%_55%] lg:items-center">
         <div className="max-w-xl">
           <h2 className="font-heading text-[length:var(--font-size-heading-2)] text-foreground">
             Experience stories crafted just for{" "}
@@ -115,7 +115,7 @@ export function ExperienceGallery() {
         <div
           ref={containerRef}
           aria-label="Experience story carousel"
-          className="-mx-6 flex snap-x snap-mandatory gap-5 overflow-x-auto px-6 pb-6 pt-2 [scrollbar-width:none] md:px-[calc(50%-165px)] lg:-mx-8 lg:px-[calc(50%-165px)] [&::-webkit-scrollbar]:hidden"
+          className="-mx-6 flex snap-x snap-mandatory gap-6 overflow-x-auto px-6 pb-6 pt-2 [scrollbar-width:none] md:px-[calc(50%-175px)] lg:-mx-8 lg:px-[calc(50%-175px)] [&::-webkit-scrollbar]:hidden"
         >
           {experiences.map((experience, index) => (
             <ExperienceCard

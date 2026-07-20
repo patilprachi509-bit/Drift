@@ -22,7 +22,7 @@ export function CompletionIllustration() {
         priority
         className="h-auto w-full"
       />
-      <p className="-mt-8 font-heading text-4xl text-foreground sm:text-5xl">Interlude Complete</p>
+      <p className="mt-6 font-heading text-4xl text-foreground sm:text-5xl">Interlude Complete</p>
     </motion.div>
   );
 }
